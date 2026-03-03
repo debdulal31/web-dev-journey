@@ -102,7 +102,38 @@ function secondLargestAmongThree(a, b, c) {
     arr.sort((x, y) => y - x);
     return arr[1];
 }
+// function countTheDigits(num){
+//     let count=0;
+//     while(num>0){
+//         count++;
+//         num=num/10;
+         
+//     }
+//     return count||1;
+// }
+function countDigits(num) {
+    num = Math.abs(num);
 
+    if (num === 0) return 1;
+
+    return Math.floor(Math.log10(num)) + 1;
+}
+function isPalindrome(num) {
+    let originalNumber=num;
+    let reverse=0;
+    let digit=0;
+    while(num>0){
+        digit=num%10;
+        reverse=reverse*10+digit;
+        num=Math.floor(num/10);
+    }
+    if (reverse===originalNumber) {
+        console.log(`The number is Palindrome`);
+    }
+    else{
+        console.log(`The number is NotPalindrome`);
+    }
+}
 // evenOrOdd(10);
 // sumOfNumbers(10);
 // factorialOfANumber(5);
@@ -112,4 +143,7 @@ function secondLargestAmongThree(a, b, c) {
 
 // console.log(largestAmongThreeNumber(31,3,7));
 // secondLargestAmongThree(3,10,20);
-console.log("Second largest is", secondLargestAmongThree(10, 13, 20));
+// console.log("Second largest is", secondLargestAmongThree(10, 13, 20));
+// console.log(countTheDigits(0));
+// console.log(countDigits(500236));
+// isPalindrome(12521);
